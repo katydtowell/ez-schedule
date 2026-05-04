@@ -181,39 +181,47 @@ export function Layout({ children, mobileFixedContent, bottomBar }: LayoutProps)
           }}
         >
           {children}
-
-          {/* ── Demo footer ── */}
-          <footer
-            style={{
-              marginTop: "auto",
-              paddingTop: "32px",
-              paddingBottom: "16px",
-              textAlign: "center",
-              fontSize: "12px",
-              color: palette.textDisabled,
-              fontFamily: "var(--font-family)",
-            }}
-          >
-            This is a demo designed and built by{" "}
-            <a
-              href="https://www.katytowelldesign.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: palette.textTertiary,
-                fontWeight: 600,
-                textDecoration: "underline",
-                textUnderlineOffset: "2px",
-              }}
-            >
-              Katy Towell
-            </a>
-          </footer>
         </main>
       </div>
 
       {/* ── Side panel — slides in from the right ── */}
       <SidePanel />
+
+      {/* ── Demo footer — fixed above bottom nav on mobile only ── */}
+      {isMobile && (
+        <footer
+          style={{
+            position: "fixed",
+            bottom: "52px",
+            left: 0,
+            right: 0,
+            zIndex: 99,
+            padding: "6px 12px",
+            textAlign: "center",
+            fontSize: "11px",
+            background: palette.surfacePrimary,
+            borderTop: `1px solid ${palette.borderLight}`,
+            color: palette.textDisabled,
+            fontFamily: "var(--font-family)",
+            transition: "background 0.25s ease",
+          }}
+        >
+          This is a demo designed and built by{" "}
+          <a
+            href="https://www.katytowelldesign.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: palette.textTertiary,
+              fontWeight: 600,
+              textDecoration: "underline",
+              textUnderlineOffset: "2px",
+            }}
+          >
+            Katy Towell
+          </a>
+        </footer>
+      )}
 
       {bottomBar}
     </div>

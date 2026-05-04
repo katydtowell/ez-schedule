@@ -6997,6 +6997,33 @@ export function SchedulePage() {
       </div>
       </div>
 
+      {/* ── Demo footer ── */}
+      <footer
+        style={{
+          flexShrink: 0,
+          padding: "12px 0 8px",
+          textAlign: "center",
+          fontSize: "12px",
+          color: palette.textDisabled,
+          fontFamily: "var(--font-family)",
+        }}
+      >
+        This is a demo designed and built by{" "}
+        <a
+          href="https://www.katytowelldesign.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: palette.textTertiary,
+            fontWeight: 600,
+            textDecoration: "underline",
+            textUnderlineOffset: "2px",
+          }}
+        >
+          Katy Towell
+        </a>
+      </footer>
+
       {/* ── Hover Popover ──────────────────────────────────────────── */}
       {hoveredEvent && (
         <ReservationDetailsPopover
