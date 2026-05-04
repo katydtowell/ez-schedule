@@ -181,6 +181,34 @@ export function Layout({ children, mobileFixedContent, bottomBar }: LayoutProps)
           }}
         >
           {children}
+
+          {/* ── Demo footer ── */}
+          <footer
+            style={{
+              marginTop: "auto",
+              paddingTop: "32px",
+              paddingBottom: "16px",
+              textAlign: "center",
+              fontSize: "12px",
+              color: palette.textDisabled,
+              fontFamily: "var(--font-family)",
+            }}
+          >
+            This is a demo designed and built by{" "}
+            <a
+              href="https://www.katytowelldesign.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: palette.textTertiary,
+                fontWeight: 600,
+                textDecoration: "underline",
+                textUnderlineOffset: "2px",
+              }}
+            >
+              Katy Towell
+            </a>
+          </footer>
         </main>
       </div>
 
