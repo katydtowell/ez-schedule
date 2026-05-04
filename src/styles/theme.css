@@ -1,0 +1,113 @@
+:root {
+  --primary: #00c4a0;
+  --font-family: 'Fira Sans', sans-serif;
+  --text-base: 13px;
+  --text-sm: 12px;
+  --text-lg: 15px;
+  --text-xl: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0e0f;
+  color: #dfe9ec;
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Native date/time picker icons — dimmed slightly so they sit beside the
+   placeholder text instead of looking neon-bright, but never inverted.
+   The previous dark-mode rule started with `invert(1)`, which flipped the
+   already-light `color-scheme: dark` icon into a dark one that was hard
+   to see. Using `opacity()` alone preserves the browser's color-scheme
+   choice (light-on-dark in dark mode, dark-on-light in light mode) and
+   keeps the date and time icons in matching tones. */
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: opacity(0.6);
+  cursor: pointer;
+}
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="light"] input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: opacity(0.7);
+  cursor: pointer;
+}
+
+/* Scrollbar styling per theme */
+[data-theme="light"] ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #dfe9ec;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #a1bdc6;
+  border-radius: 3px;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #597179;
+}
+[data-theme="light"] {
+  scrollbar-color: #a1bdc6 #dfe9ec;
+  scrollbar-width: thin;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #29373d;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #6e8b94;
+  border-radius: 3px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #a1bdc6;
+}
+[data-theme="dark"] {
+  scrollbar-color: #6e8b94 #29373d;
+  scrollbar-width: thin;
+}
+
+/* Always-visible scrollbar — opts out of macOS overlay auto-hide.
+   Apply this class to any scroll container that should never hide its scrollbar. */
+.always-show-scrollbar {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+.always-show-scrollbar::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+}
+.always-show-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  min-height: 30px;
+}
+[data-theme="light"] .always-show-scrollbar::-webkit-scrollbar-track {
+  background: #dfe9ec;
+}
+[data-theme="light"] .always-show-scrollbar::-webkit-scrollbar-thumb {
+  background: #a1bdc6;
+}
+[data-theme="light"] .always-show-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #597179;
+}
+[data-theme="dark"] .always-show-scrollbar::-webkit-scrollbar-track {
+  background: #29373d;
+}
+[data-theme="dark"] .always-show-scrollbar::-webkit-scrollbar-thumb {
+  background: #6e8b94;
+}
+[data-theme="dark"] .always-show-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a1bdc6;
+}
