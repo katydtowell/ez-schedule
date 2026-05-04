@@ -77,5 +77,19 @@ export const ADMIN_SUBPAGE_ITEMS: NavItem[] = [
 
 /** IDs that appear in the main sidebar by default. */
 export const DEFAULT_PINNED_IDS: string[] = [
+  "admin",
+  "documents",
+  "check-in",
+  "groups",
+  "rentals",
   "schedule",
+  "clients",
+  "dashboard",
+  "email-campaigns",
+  "equipment",
+  "ezleagues",
+  "ezsignup",
+  "point-of-sale",
+  "reports",
+  "time-clock",
 ];
